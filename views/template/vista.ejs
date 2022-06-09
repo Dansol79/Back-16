@@ -1,0 +1,35 @@
+<%- include('./index') %>
+
+<div class="container mt-3">
+
+<div class="jumbotron">
+    <h1>Vista de Productos</h1>
+    <br>
+     <% if(data.length == 0) { %>
+        <h3 class="alert alert-warning">No se encontraron productos.</h3>
+    <% }  else { %>
+        <div class="table-responsive">
+            <table class="table table-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Foto</th>
+                </tr>
+                <% data.forEach( e => {  %>
+                    <tr>
+                        <td><%=e.title%></td>
+                        <td><%=e.price%></td>
+                        <td>
+                            <img src="<%=e.imagen%>" alt="not found" width="50">
+                        </td>
+                    </tr>
+                <% }) %> 
+            </table>
+        </div>
+    <% } %> 
+</div>
+</div>
+
+</body>
+
+</html>
